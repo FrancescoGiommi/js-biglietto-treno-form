@@ -9,6 +9,10 @@ console.log(inputNameEl);
 console.log(inputKmEl);
 console.log(inputAgeEl);
 
-const kmCost = 0.21;
-let NumKm = inputKmEl;
-const priceTicket = NumKm * kmCost;
+btnTicketGeneratorEl.addEventListener("click", () => {
+  const fullName = inputNameEl.value;
+
+  if (fullName.length < 3) {
+    console.log("Errore");
+  }
+});
