@@ -13,36 +13,49 @@
   </head>
   <body>
     <div class="container">
-      <div class="calc-price-ticket">
+      <!--Form dati viaggiatore-->
+      <div class="calc-price-ticket text-center mb-3">
         <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
 
-        <form class="row" id="info-ticket-user">
+        <form class="row g-5" id="info-ticket-user">
           <div class="col-4">
             <div>
+              <!--Nome e cognome-->
               <h4>Nome e Cognome</h4>
-              <input type="text" class="form-control" id="name-input" />
+              <input
+                type="text"
+                class="form-control"
+                id="name-input"
+                required
+              />
             </div>
           </div>
           <div id="Km-input" class="col-4">
             <div>
+              <!--Km da percorrere-->
               <h4>Km da percorrere</h4>
-              <input type="text" class="form-control" id="Km-input" />
+              <input type="text" class="form-control" id="Km-input" required />
             </div>
           </div>
           <div class="col-4">
+            <!--Età del viaggiatore-->
+            <h4>Fascia d'età</h4>
             <select
-              id="age-input"
               class="form-select"
               aria-label="Default select example"
+              required
             >
-              <option selected>Fascia d'età</option>
-              <option value="1">Minorenne</option>
-              <option value="2">Maggiorenne</option>
-              <option value="3">Over 65</option>
+              <option selected>Minorenne</option>
+              <option value="1">Maggiorenne</option>
+              <option value="2">Over 65</option>
             </select>
           </div>
-          <button id="btn-generator-ticket">Genera</button>
-          <button id="delete-ticket">Annulla</button>
+          <div class="d-flex gap-3 justify-content-around">
+            <!--Genera biglietto-->
+            <button id="btn-generator-ticket">Genera</button>
+            <!--Annulla inserimento-->
+            <button id="delete-ticket">Annulla</button>
+          </div>
         </form>
       </div>
       <div class="price-ticket">
@@ -50,33 +63,38 @@
         <div class="row">
           <div class="col-12"><h3>DETTAGLIO PASSEGGERI</h3></div>
           <div class="col-4">
+            <!--Nome e cognome-->
             <h3>NOME PASSEGGERO</h3>
             <div class="card">
-              <div class="card-body">This is some text within a card body.</div>
+              <div class="card-body">Nome</div>
             </div>
           </div>
           <div class="col-2">
+            <!--Tipologia di biglietto-->
             <h4>Offerta</h4>
             <div class="card">
-              <div class="card-body">This is some text within a card body.</div>
+              <div class="card-body">Tipo di Biglietto</div>
             </div>
           </div>
           <div class="col-2">
+            <!--Numero della carrozza-->
             <h4>Carrozza</h4>
             <div class="card">
-              <div class="card-body">This is some text within a card body.</div>
+              <div class="card-body">Numero Carrozza</div>
             </div>
           </div>
           <div class="col-2">
+            <!--Codice del biglietto-->
             <h4>Codice CP</h4>
             <div class="card">
-              <div class="card-body">This is some text within a card body.</div>
+              <div class="card-body">Codice biglietto</div>
             </div>
           </div>
           <div class="col-2">
+            <!--Prezzo del biglietto-->
             <h4>Costo biglietto</h4>
             <div class="card">
-              <div class="card-body">This is some text within a card body.</div>
+              <div class="card-body">Prezzo biglietto</div>
             </div>
           </div>
         </div>
