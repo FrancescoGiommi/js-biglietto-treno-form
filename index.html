@@ -15,18 +15,17 @@
     <div class="container">
       <div class="calc-price-ticket">
         <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-        <div class="row">
+
+        <form class="row" id="info-ticket-user">
           <div class="col-4">
-            <form class="form-floating">
+            <div>
               <input type="text" class="form-control" id="name-input" />
-              <label for="name-input">Nome e Cognome</label>
-            </form>
+            </div>
           </div>
           <div id="Km-input" class="col-4">
-            <form class="form-floating">
+            <div>
               <input type="text" class="form-control" id="Km-input" />
-              <label for="Km-input">Km da percorrere</label>
-            </form>
+            </div>
           </div>
           <div class="col-4">
             <select
@@ -40,9 +39,9 @@
               <option value="3">Over 65</option>
             </select>
           </div>
-          <button id="generator-ticket">Genera</button>
+          <button id="btn-generator-ticket">Genera</button>
           <button id="delete-ticket">Annulla</button>
-        </div>
+        </form>
       </div>
       <div class="price-ticket">
         <h2>IL TUO BIGLIETTO</h2>
