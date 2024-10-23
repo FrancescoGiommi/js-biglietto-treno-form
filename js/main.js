@@ -7,3 +7,9 @@ const ticketDeletedEl = document.getElementById("delete-ticket");
 console.log(inputNameEl);
 console.log(inputKmEl);
 console.log(inputAgeEl);
+
+const kmCost = 0.21;
+
+ticketGeneratorEl.addEventListener("click", () => {
+  console.log(inputAgeEl.value);
+});

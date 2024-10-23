@@ -13,19 +13,48 @@
   </head>
   <body>
     <div class="container">
-      <form action="">
-        <div class="calc-price-ticket">
-          <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-          <div class="row">
-            <input id="name-input" type="text" />
-            <input id="Km-input" type="text" />
-            <input id="age-input" type="text" />
-            <button id="generator-ticket">Genera</button>
-            <button id="delete-ticket">Annulla</button>
+      <div class="calc-price-ticket">
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        <div class="row">
+          <div class="col-4">
+            <form class="form-floating">
+              <input type="text" class="form-control" id="name-input" />
+              <label for="name-input">Nome e Cognome</label>
+            </form>
           </div>
+          <div id="Km-input" class="col-4">
+            <form class="form-floating">
+              <input type="text" class="form-control" id="Km-input" />
+              <label for="Km-input">Km da percorrere</label>
+            </form>
+          </div>
+          <div class="col-4">
+            <select
+              id="age-input"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option selected>Fascia d'età</option>
+              <option value="1">Under 18</option>
+              <option value="2">Maggiorenne</option>
+              <option value="3">Over 65</option>
+            </select>
+          </div>
+          <button id="generator-ticket">Genera</button>
+          <button id="delete-ticket">Annulla</button>
         </div>
-        <div class="price-ticket">IL TUO BIGLIETTO</div>
-      </form>
+      </div>
+      <div class="price-ticket">
+        <h2>IL TUO BIGLIETTO</h2>
+        <div class="row">
+          <div class="col-12"><h3>DETTAGLIO PASSEGGERI</h3></div>
+          <div class="col-4">Nome passeggero</div>
+          <div class="col-2">Offerta</div>
+          <div class="col-2">Carrozza</div>
+          <div class="col-2">Codice CP</div>
+          <div class="col-2">Costo biglietto</div>
+        </div>
+      </div>
     </div>
     <script src="./js/main.js"></script>
     <script
