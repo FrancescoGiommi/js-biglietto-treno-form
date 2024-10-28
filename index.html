@@ -14,10 +14,9 @@
   <body>
     <div class="container">
       <!--Form dati viaggiatore-->
+      <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
       <div class="calc-price-ticket text-center mb-3">
-        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-
-        <form class="row g-5" id="info-ticket-user">
+        <form class="row g-5 form-control d-flex" id="ticket-user-form">
           <div class="col-4">
             <div>
               <!--Nome e cognome-->
@@ -34,35 +33,30 @@
             <div>
               <!--Km da percorrere-->
               <h4>Km da percorrere</h4>
-              <input type="text" class="form-control" id="Km-input" required />
+              <input type="text" class="form-control" id="km-input" required />
             </div>
           </div>
           <div class="col-4">
             <!--Età del viaggiatore-->
             <h4>Fascia d'età</h4>
-            <select
-              id="age-input"
-              class="form-select"
-              aria-label="Default select example"
-              required
-            >
-              <option selected>Minorenne</option>
-              <option value="1">Maggiorenne</option>
-              <option value="2">Over 65</option>
+            <select id="age-input" class="form-select" required>
+              <option value="1" id="under-18">Under 18</option>
+              <option value="2" id="adult">Maggiorenne</option>
+              <option value="3" id="over-65">Over 65</option>
             </select>
           </div>
           <div class="d-flex gap-3 justify-content-around">
             <!--Genera biglietto-->
             <button id="btn-ticket">Genera</button>
             <!--Annulla inserimento-->
-            <button id="delete-ticket">Annulla</button>
+            <button id="delete-ticket" value="Reset">Annulla</button>
           </div>
         </form>
       </div>
       <div class="price-ticket">
         <h2>IL TUO BIGLIETTO</h2>
         <div class="row">
-          <div class="col-12" id="output-card">
+          <div class="col-12" id="output-ticket">
             <h3>DETTAGLIO PASSEGGERI</h3>
           </div>
           <div class="col-4">
@@ -79,7 +73,7 @@
             <h4>Offerta</h4>
             <div class="card">
               <div class="card-body">
-                <span id="type-ticket"></span>
+                <span id="rate-ticket"></span>
               </div>
             </div>
           </div>
@@ -87,14 +81,18 @@
             <!--Numero della carrozza-->
             <h4>Carrozza</h4>
             <div class="card">
-              <div class="card-body">5</div>
+              <div class="card-body">
+                <span id="carriage"></span>
+              </div>
             </div>
           </div>
           <div class="col-2">
             <!--Codice del biglietto-->
             <h4>Codice CP</h4>
             <div class="card">
-              <div class="card-body">92911</div>
+              <div class="card-body">
+                <span id="cp-code"></span>
+              </div>
             </div>
           </div>
           <div class="col-2">
@@ -102,7 +100,7 @@
             <h4>Costo biglietto</h4>
             <div class="card">
               <div class="card-body">
-                <span id="price-cost"></span>
+                <span id="ticket-cost"></span>
               </div>
             </div>
           </div>
