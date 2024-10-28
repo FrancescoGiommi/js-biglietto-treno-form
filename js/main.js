@@ -26,43 +26,48 @@
   ma in ogni caso cercate di farla vostra */
 
 /* dichiaro gli input del form */
+
 const inputNameEl = document.getElementById("name-input");
 const inputKmEl = document.getElementById("km-input");
 const inputAgeEl = document.getElementById("age-input");
+const under18El = document.getElementById("under-18");
+const over65El = document.getElementById("over-65");
+const adultEl = document.getElementById("adult");
 const ticketBtnEl = document.getElementById("btn-ticket");
 const outputTicketEl = document.getElementById("output-ticket");
 const ticketFormEl = document.getElementById("ticket-user-form");
+const deleteTicketEl = document.getElementById("delete-ticket");
 
 /* dichiaro i dati del biglitto  */
 const namePassengerEl = document.getElementById("passenger-name");
 const ticketRateEl = document.getElementById("rate-ticket");
 const carriageEl = document.getElementById("carriage");
 const cpCodeEl = document.getElementById("cp-code");
-const ticketCostEl = document.getElementById("ticket-cost");
-
-console.log(inputNameEl, inputKmEl, inputAgeEl);
+const ticketPriceEl = document.getElementById("ticket-price");
 
 ticketFormEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const kmPrice = 0.21;
-  const fullprice = kmPrice * inputKmEl;
-  let discountPerc = 0;
-  let discountEur = 0;
-  const fullName = inputNameEl.Value;
-  const distanceKm = inputKmEl.Value;
-  const ageUser = inputAgeEl.Value;
+  const userName = inputNameEl.value;
+  const distanceKm = inputKmEl.value;
+  const ageUser = inputAgeEl.value;
+  console.log(userName, distanceKm + " Km", ageUser + " anni");
 
-  discountEur = (fullprice * discountPerc) % 100;
-  finalPrice = fullprice - discountEur;
+  const kmCost = 0.21;
 
-  if (inputAgeEl === "under-18") {
-    discountPerc = 20;
-  } else if (inputAgeEl === "over-65") {
-    discountPerc = 40;
+  let discountPrice = 0;
+
+  if (ageUser == "under-18") {
+    const discountUnder18 = 20;
+    discountPrice = (priceTicket * discountUnder18) % 100;
+  } else if (ageUser == "over-65") {
+    const discountOver65 = 40;
+    discountPrice = (priceTicket - discountOver65) % 100;
   }
+  const priceTicket = kmCost * distanceKm;
 
-  console.log(fullprice);
-  console.log(discountEur);
-  console.log(finalPrice);
+  console.log("prezzo scontato " + discountPrice);
+  console.log("prezzo del biglietto " + priceTicket);
+  console.log("prezzo del biglietto " + discountUnder18);
+  console.log("prezzo del biglietto " + discountOver65);
 });
