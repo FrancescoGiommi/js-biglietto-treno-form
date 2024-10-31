@@ -55,27 +55,31 @@ ticketFormEl.addEventListener("submit", (event) => {
   const under18 = under18El.value;
   const adult = adultEl.value;
   const over65 = over65El.value;
-  console.log(userName, distanceKm + " Km", ageUser + " anni");
 
+  let discountPrice = 0;
   const kmPrice = 0.21;
-  const priceTicket = (distanceKm * kmPrice).toFixed(2);
-  let discountEur;
-  let discountPerc;
+  const priceTicket = (kmPrice * distanceKm).toFixed(2);
   let rateTicket = "Biglietto Standard";
-  discountEur = (priceTicket - discountPerc) % 100;
-  const finalPrice = priceTicket - discountEur;
+  const fullPrice = (priceTicket - discountPrice).toFixed(2);
+
   if (ageUser == under18) {
-    discountPerc = 20;
+    const discountUnder18 = 20;
+    discountPrice = (priceTicket * discountUnder18) % 100;
     rateTicket = "Biglietto Under 18";
   } else if (ageUser == over65) {
-    discountPerc = 40;
-    rateTicket = "Biglietto Over65";
+    const discountOver65 = 40;
+    discountPrice = (priceTicket * discountOver65) % 100;
+    rateTicket = "Biglietto Over 65";
   }
 
+  const randomNumber = Math.floor(Math.random() * 100000);
+  const randomNumber2 = Math.floor(Math.random() * 10);
   let outputTicket = "";
 
   const generateTicket = `
-<div class="col-12 ">
+          
+        <div class="row" id="output-ticket">
+          <div class="col-12 ">
             <h3>DETTAGLIO PASSEGGERI</h3>
           </div>
           <div class="col-4">
@@ -98,7 +102,7 @@ ticketFormEl.addEventListener("submit", (event) => {
             <h4>Carrozza</h4>
             <div class="card">
               <div class="card-body">
-                <span id="carriage"></span>
+                <span id="carriage">${randomNumber2}</span>
               </div>
             </div>
           </div>
@@ -106,7 +110,7 @@ ticketFormEl.addEventListener("submit", (event) => {
             <h4>Codice CP</h4>
             <div class="card">
               <div class="card-body">
-                <span id="cp-code"></span>
+                <span id="cp-code">${randomNumber}</span>
               </div>
             </div>
           </div>
@@ -114,7 +118,7 @@ ticketFormEl.addEventListener("submit", (event) => {
             <h4>Costo biglietto</h4>
             <div class="card">
               <div class="card-body">
-                <span id="ticket-price">€ ${finalPrice}</span>
+                <span id="ticket-price">${priceTicket}</span>
               </div>
             </div>
           </div>
